@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Blog</title>
+    </head>
+
+    <body>
+        <h1>My Vue Blog</h1>
+        <div id="app" class="flex-container">
+            <h2>New Post</h2>
+            <h3>Titulo</h3>
+            <input v-model="title" placeholder="Text a title" type="text" />
+            <h3>Entrada</h3>
+            <textarea v-model="post" placeholder="Text a post" rows="4" cols="50"></textarea>
+            <h2>{{ title }}</h2>
+            <p>{{ post }}</p>
+            <div class="flex-item flex-item-content">
+                <h2>Content</h2>
+
+                <h3>{{ title1 }}</h3>
+
+                {{ post1 }}
+
+                <h3>{{ title2 }}</h3>
+
+                {{ post2 }}
+
+                <h3>{{ title3 }}</h3>
+
+                {{ post3 }}
+            </div>
+        </div>
+        <div id="app2" class="flex-item flex-item-summary">
+            <h2>{{ message }}</h2>
+            <ul class="summary-list">
+                <li class="item">{{ title1 }}</li>
+                <li class="item">{{ title2 }}</li>
+                <li class="item">{{ title3 }}</li>
+            </ul>
+        </div>
+        <script src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    title: '',
+                    post: '',
+                    title1: 'My First Post',
+                    post1: 'This is the content of my first blog post. Vue.js makes it easy to create dynamic web applications.',
+                    title2: 'Learning Vue.js',
+                    post2: 'Vue.js is a progressive JavaScript framework that is approachable and versatile. It allows for building interactive user interfaces with ease.',
+                    title3: 'Why Vue?',
+                    post3: 'Vue.js offers a gentle learning curve, excellent documentation, and a vibrant community, making it a great choice for both beginners and experienced developers.'
+                }
+            })
+
+            const app2 = new Vue({
+                el: '#app2',
+                data: {
+                    message: 'Blog Summary',
+                    title1: '16/06/2019 Trip 1',
+                    title2: '16/06/2019 Trip 2',
+                    title3: '16/06/2019 Trip 3'
+                }
+            })
+        </script>
+    </body>
+</html>
