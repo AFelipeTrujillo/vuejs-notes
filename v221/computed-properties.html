@@ -1,0 +1,53 @@
+<html>
+    <head></head>
+    <body>
+        
+        <div id="app">
+            <h1>Computed Properties</h1>
+            <h2>{{ title }}</h2>
+            <h3> {{ fullName }}</h3>
+            <p>Sum</p>
+            <input type="number" v-model="operator1" placeholder="Operator 1" /> +
+            <input type="number" v-model="operator2" placeholder="Operator 2" /> = {{resultSum}}
+            <br/>
+            <p>Subtraction</p>
+            <input type="number" v-model="operator3" placeholder="Operator 3" /> -
+            <input type="number" v-model="operator4" placeholder="Operator 4" /> = {{resultSubtraction}}
+        </div>
+        <script src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    title: 'Using Computed Properties in Vue.js',
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    operator1: 10,
+                    operator2: 0,
+                    operator3: 0,
+                    operator4: 0
+                },
+                computed: {
+                    fullName() {
+                        return this.firstName + ' ' + this.lastName;
+                    },
+                    resultSum() {
+                        return Number(this.operator1) + Number(this.operator2);
+                    },
+                    resultSubtraction() {
+                        return Number(this.operator3) - Number(this.operator4);
+                    }
+
+                },
+                /** methods: {
+                    resultSum() {
+                        return Number(this.operator1) + Number(this.operator2);
+                    },
+                    resultSubtraction() {
+                        return Number(this.operator3) - Number(this.operator4);
+                    }
+                }*/
+            })
+        </script>
+    </body>
+</html>
