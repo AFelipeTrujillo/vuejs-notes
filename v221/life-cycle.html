@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Life Cycle</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ message }}</h1>
+        </div>
+        <script src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Life Cycle of a Vue Instance'
+                },
+                beforeCreate() {
+                    console.log('Vue instance is about to be created');
+                },
+                created() {
+                    console.log('Vue instance created');
+                },
+                beforeMount() {
+                    console.log('Vue instance is about to be mounted to the DOM');
+                },
+                mounted() {
+                    console.log('Vue instance mounted to the DOM');
+                },
+                beforeUpdate() {
+                    console.log('Vue instance is about to update the DOM');
+                },
+                updated() {
+                    console.log('Vue instance updated the DOM');
+                },
+                beforeDestroy() {
+                    console.log('Vue instance is about to be destroyed');
+                },
+                destroyed() {
+                    console.log('Vue instance destroyed');
+                },
+                methods: {
+                    handleClick() {
+                        app.$destroy();
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
