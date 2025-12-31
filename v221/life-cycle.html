@@ -5,6 +5,8 @@
     <body>
         <div id="app">
             <h1>{{ message }}</h1>
+            <input type="text" v-model="message" />
+            <button v-on:click="handleClick">Destroy Vue Instance</button>
         </div>
         <script src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
         <script>
