@@ -1,0 +1,27 @@
+<html>
+    <head>  
+
+    </head>
+
+    <body>  
+        <div id="id">
+            <h1>{{ showMessage() }}</h1>
+        </div>
+        <button v-on:click="showMessage" type="button">Show</button>
+        <script src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: '#id',
+                data: {
+                    message: 'Hello from Methods in Vue.js'
+                },
+                methods: {
+                    showMessage() {
+                        console.log('Method showMessage called');
+                        return this.message;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
